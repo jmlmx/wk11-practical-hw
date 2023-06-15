@@ -42,7 +42,8 @@ exports.updateTodo = async (req, res) => {
 
 exports.deleteTodo = async (req, res) => {
     try {
-        await req.todo.deleteOne()
+        const todo = await Todo.findOne({ _id: req.params.id })
+        await todo.deleteOne()
         res.json({message: "Todo Item Deleted"})
     } catch (error) {
         res.status(400).json({message: error.message})
