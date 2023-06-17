@@ -1,0 +1,86 @@
+
+
+# Get All Todos --------------------
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 20
+scenarios:
+  - flow:
+      - get:
+          url: "/todos"
+
+# # Create A Todo --------------------
+# config:
+#   target: "http://localhost:3000"
+#   phases:
+#     - duration: 60
+#       arrivalRate: 20
+# scenarios:
+#   - flow:
+#       - post: 
+#           url: "/todos"
+#           json:
+#             title: "make dinner"
+#             description: "cook spaghetti"
+
+# Get A Specific Todo --------------------
+# config:
+#   target: "http://localhost:3000"
+#   phases:
+#     - duration: 60
+#       arrivalRate: 20
+# scenarios:
+#   - flow:
+#       - post: 
+#           url: "/todos"
+#           json:
+#             title: "make dinner"
+#             description: "cook spaghetti"
+#           capture:
+#             - json: $.todo._id
+#               as: "todoId"
+#       - get:
+#           url: "/todos/{{todoId}}"
+
+
+# Update A Todo ----------------------
+# config:
+#   target: "http://localhost:3000"
+#   phases:
+#     - duration: 60
+#       arrivalRate: 20
+# scenarios:
+#   - flow:
+#       - post: 
+#           url: "/todos"
+#           json:
+#             title: "make dinner"
+#             description: "cook spaghetti"
+#           capture:
+#             - json: $.todo._id
+#               as: "todoId"
+#       - put:
+#           url: "/todos/{{todoId}}"
+#           json:
+#             title: "make dinner"
+#             description: "cook chili"
+# Delete A Todo -----------------------
+# config:
+#   target: "http://localhost:3000"
+#   phases:
+#     - duration: 60
+#       arrivalRate: 20
+# scenarios:
+#   - flow:
+#       - post: 
+#           url: "/todos"
+#           json:
+#             title: "make dinner"
+#             description: "cook spaghetti"
+#           capture:
+#             - json: $.todo._id
+#               as: "todoId"
+#       - delete:
+#           url: "/todos/{{todoId}}"
